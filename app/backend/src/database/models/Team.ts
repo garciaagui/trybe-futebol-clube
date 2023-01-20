@@ -1,10 +1,9 @@
-import { DataTypes, Model } from "sequelize";
-import connection from './index'
-import Match from "./Match";
+import { DataTypes, Model } from 'sequelize';
+import connection from './index';
 
 class Team extends Model {
   declare id: number;
-  declare team_name: string;
+  declare teamName: string;
 }
 
 Team.init({
@@ -14,7 +13,7 @@ Team.init({
     autoIncrement: true,
     primaryKey: true,
   },
-  team_name: {
+  teamName: {
     type: DataTypes.STRING,
     allowNull: false,
     field: 'team_name',
@@ -23,10 +22,7 @@ Team.init({
   sequelize: connection,
   tableName: 'teams',
   timestamps: false,
-  underscored: false,
+  underscored: true,
 });
-
-Team.hasMany(Match, { foreignKey: 'home_team_id' });
-Team.hasMany(Match, { foreignKey: 'away_team_id' });
 
 export default Team;

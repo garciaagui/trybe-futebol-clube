@@ -1,14 +1,14 @@
-import { DataTypes, Model } from "sequelize";
-import connection from './index'
-import Team from "./Team";
+import { DataTypes, Model } from 'sequelize';
+import connection from './index';
+import Team from './Team';
 
 class Match extends Model {
   declare id: number;
-  declare home_team_id: number;
-  declare home_team_goals: number;
-  declare away_team_id: number;
-  declare away_team_goals: number;
-  declare in_progress: boolean;
+  declare homeTeamId: number;
+  declare homeTeamGoals: number;
+  declare awayTeamId: number;
+  declare awayTeamGoals: number;
+  declare inProgress: boolean;
 }
 
 Match.init({
@@ -18,27 +18,27 @@ Match.init({
     autoIncrement: true,
     primaryKey: true,
   },
-  home_team_id: {
+  homeTeamId: {
     type: DataTypes.INTEGER,
     field: 'home_team_id',
     allowNull: false,
   },
-  home_team_goals: {
+  homeTeamGoals: {
     type: DataTypes.INTEGER,
     field: 'home_team_goals',
     allowNull: false,
   },
-  away_team_id: {
+  awayTeamId: {
     type: DataTypes.INTEGER,
     field: 'away_team_id',
     allowNull: false,
   },
-  away_team_goals: {
+  awayTeamGoals: {
     type: DataTypes.INTEGER,
     field: 'away_team_goals',
     allowNull: false,
   },
-  in_progress: {
+  inProgress: {
     type: DataTypes.BOOLEAN,
     field: 'in_progress',
     allowNull: false,
@@ -47,9 +47,11 @@ Match.init({
   sequelize: connection,
   tableName: 'matches',
   timestamps: false,
-  underscored: false,
+  underscored: true,
 });
 
+Team.hasMany(Match, { foreignKey: 'home_team_id' });
+Team.hasMany(Match, { foreignKey: 'away_team_id' });
 
 Match.belongsTo(Team, { foreignKey: 'home_team_id' });
 Match.belongsTo(Team, { foreignKey: 'away_team_id' });

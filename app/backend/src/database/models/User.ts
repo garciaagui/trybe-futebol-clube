@@ -1,5 +1,5 @@
-import { DataTypes, Model } from "sequelize";
-import connection from './index'
+import { DataTypes, Model } from 'sequelize';
+import connection from './index';
 
 class User extends Model {
   declare id: number;
