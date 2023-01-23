@@ -12,4 +12,6 @@ const mockedUnencryptedPassword = 'secret_admin'
 
 const mockedToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3NDUwODQ0MCwiZXhwIjoxNjc0NTMwMDQwfQ.1snol1cy5G6-3E3PZ7m9NPwhy4kQOcrwWiz677V_n98"
 
-export { mockedUser, mockedUnencryptedPassword, mockedToken };
+const mockedPayload = { email: 'admin@admin.com', iat: 1674516494, exp: 1674538094 }
+
+export { mockedUser, mockedUnencryptedPassword, mockedToken, mockedPayload };

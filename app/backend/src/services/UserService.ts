@@ -24,7 +24,7 @@ export default class UserService implements IUserService {
       throw new UnauthorizedException('Incorrect email or password');
     }
 
-    const token = generateToken(Number(user?.id));
+    const token = generateToken(user?.email);
 
     return token;
   }
