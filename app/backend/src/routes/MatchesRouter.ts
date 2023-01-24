@@ -9,5 +9,9 @@ const router = Router();
 
 router.get('/', (req, res, next) => matchController.getAll(req, res, next));
 router.post('/', authMiddleware, (req, res, next) => matchController.create(req, res, next));
+router.patch(
+  '/:id/finish',
+  (req, res, next) => matchController.updateInProgressStatus(req, res, next),
+);
 
 export default router;

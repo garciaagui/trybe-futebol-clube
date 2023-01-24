@@ -1,4 +1,4 @@
-import { NotFoundException } from '../exceptions';
+import { BadRequestException, NotFoundException } from '../exceptions';
 import { INewMatch, IMatch } from '../interfaces';
 import Match from '../database/models/Match';
 import Team from '../database/models/Team';
@@ -16,6 +16,16 @@ export default class MatchService implements IMatchService {
       ],
     });
     return matches;
+  }
+
+  public async getById(id: number): Promise<IMatch | null> {
+    MatchValidations.validateId(id);
+
+    const match = await this._model.findByPk(id);
+
+    if (!match) throw new NotFoundException('Match not found');
+
+    return match;
   }
 
   public async getByInProgress(value: string | null): Promise<IMatch[]> {
@@ -47,5 +57,14 @@ export default class MatchService implements IMatchService {
     const newMatch = await this._model.create({ ...match, inProgress: true });
 
     return newMatch;
+  }
+
+  public async updateInProgressStatus(id: number): Promise <number | null> {
+    const match = await this.getById(id);
+
+    if (!match?.inProgress) throw new BadRequestException('Match already finished');
+
+    const [affectedCount] = await this._model.update({ inProgress: false }, { where: { id } });
+    return affectedCount;
   }
 }

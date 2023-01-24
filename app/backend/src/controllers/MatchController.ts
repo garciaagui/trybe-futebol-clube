@@ -31,4 +31,17 @@ export default class MatchController {
       next(error);
     }
   };
+
+  public updateInProgressStatus =
+  async (req: Request, res: Response, next: NextFunction): Promise<Response | void> => {
+    try {
+      const { id } = req.params;
+
+      await this._service.updateInProgressStatus(Number(id));
+
+      res.status(statusCodes.ok).json({ message: 'Finished' });
+    } catch (error) {
+      next(error);
+    }
+  };
 }

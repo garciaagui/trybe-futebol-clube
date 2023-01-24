@@ -1,6 +1,12 @@
 import { BadRequestException, UnprocessableException } from '../../exceptions';
 
 export default class MatchValidations {
+  public static validateId(id: number): void {
+    if (typeof id !== 'number' || Number.isNaN(id)) {
+      throw new BadRequestException('Id must be a number');
+    }
+  }
+
   public static validateInProgressValue(value: string | null): void {
     if (value !== 'true' && value !== 'false') {
       throw new BadRequestException('Value must be "true" or "false"');
