@@ -13,6 +13,6 @@ const mockedTeams: ITeam[] = [
     id: 3,
     teamName: "Botafogo"
   },
-]
+];
 
 export { mockedTeams };
