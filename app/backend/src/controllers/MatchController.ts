@@ -8,7 +8,12 @@ export default class MatchController {
   public getAll =
   async (req: Request, res: Response, next: NextFunction): Promise<Response | void> => {
     try {
-      const matches = await this._service.getAll();
+      let matches;
+      const inProgressValue: string = req.query.inProgress as string;
+
+      if (inProgressValue) matches = await this._service.getByInProgress(inProgressValue);
+
+      else matches = await this._service.getAll();
 
       res.status(statusCodes.ok).json(matches);
     } catch (error) {
