@@ -1,3 +1,4 @@
 import { ILogin, IUser } from './IUser';
+import ITeam from './ITeam';
 
-export { ILogin, IUser };
+export { ILogin, IUser, ITeam };
