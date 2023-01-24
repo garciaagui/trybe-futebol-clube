@@ -2,13 +2,16 @@ import { ITeam } from "../../interfaces";
 
 const mockedTeams: ITeam[] = [
   {
-    teamName: 'Avaí/Kindermann',
+    id: 1,
+    teamName: "Avaí/Kindermann"
   },
   {
-    teamName: 'Bahia',
+    id: 2,
+    teamName: "Bahia"
   },
   {
-    teamName: 'Botafogo',
+    id: 3,
+    teamName: "Botafogo"
   },
 ]
 

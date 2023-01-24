@@ -30,20 +30,4 @@ describe('Testes de integração referentes a GET /teams', async () => {
       expect(chaiHttpResponse.body).to.be.deep.equal(mockedTeams);
     });
   });
-
-  // describe('Em caso de falha', async () => {
-  //   it('Retorna um erro com status HTTP 400 quando o email não é passado', async () => {
-  //     sinon.stub(User, "findOne").resolves(null);
-
-  //     chaiHttpResponse = await chai
-  //       .request(app)
-  //       .post('/login')
-  //       .send({
-  //         password: mockedUnencryptedPassword,
-  //       });
-
-  //     expect(chaiHttpResponse.status).to.be.equal(400);
-  //     expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'All fields must be filled' });
-  //   });
-  // })
 });
