@@ -20,4 +20,15 @@ export default class MatchController {
       next(error);
     }
   };
+
+  public create =
+  async (req: Request, res: Response, next: NextFunction): Promise<Response | void> => {
+    try {
+      const newMatch = await this._service.create(req.body);
+
+      res.status(statusCodes.created).json(newMatch);
+    } catch (error) {
+      next(error);
+    }
+  };
 }

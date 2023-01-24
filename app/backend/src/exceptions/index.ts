@@ -1,4 +1,9 @@
-import UnauthorizedException from './Unauthorized';
 import BadRequestException from './BadRequest';
+import NotFoundException from './NotFound';
+import UnauthorizedException from './Unauthorized';
+import UnprocessableException from './Unprocessable';
 
-export { UnauthorizedException, BadRequestException };
+export { BadRequestException,
+  NotFoundException,
+  UnauthorizedException,
+  UnprocessableException };

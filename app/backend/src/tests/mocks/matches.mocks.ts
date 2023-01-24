@@ -1,4 +1,4 @@
-import { IMatchMocked } from "../../interfaces";
+import { IMatch, IMatchMocked } from "../../interfaces";
 
 const mockedMatches: IMatchMocked[] = [
   {
@@ -93,4 +93,39 @@ const mockedFinishedMatches: IMatchMocked[] = [
   }
 ];
 
-export { mockedMatches, mockedMatchesInProgress, mockedFinishedMatches }
+const mockedCorrectNewMatchReq = {
+  homeTeamId: 16,
+  awayTeamId: 8,
+  homeTeamGoals: 2,
+  awayTeamGoals: 2,
+}
+
+const mockedNewMatchWithSameTeamsReq = {
+  homeTeamId: 8,
+  awayTeamId: 8,
+  homeTeamGoals: 2,
+  awayTeamGoals: 2,
+}
+
+const mockedNewMatchWithInvalidTeamsReq = {
+  homeTeamId: 9999,
+  awayTeamId: 8,
+  homeTeamGoals: 2,
+  awayTeamGoals: 2,
+}
+
+const mockedNewMatchRes: IMatch = {
+  ...mockedCorrectNewMatchReq,
+  id: 1,
+  inProgress: true
+}
+
+export {
+  mockedMatches,
+  mockedMatchesInProgress,
+  mockedFinishedMatches,
+  mockedCorrectNewMatchReq,
+  mockedNewMatchWithSameTeamsReq,
+  mockedNewMatchWithInvalidTeamsReq,
+  mockedNewMatchRes
+}

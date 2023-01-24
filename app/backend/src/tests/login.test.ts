@@ -128,7 +128,7 @@ describe('Testes de integração referentes a GET /login/validate', async () => 
         .set({ "Authorization": '' });
 
       expect(chaiHttpResponse.status).to.be.equal(401);
-      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Token not found' });
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Token must be a valid token' });
     });
 
     it('Retorna um erro com status HTTP 401 quando o token é inválido', async () => {
@@ -138,7 +138,7 @@ describe('Testes de integração referentes a GET /login/validate', async () => 
         .set({ "Authorization": 'invalidToken' });
 
       expect(chaiHttpResponse.status).to.be.equal(401);
-      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Invalid token' });
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Token must be a valid token' });
     });
   });
 });
