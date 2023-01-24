@@ -70,7 +70,7 @@ describe('Testes de integração referentes a GET /teams/:id', async () => {
       chaiHttpResponse = await chai
         .request(app)
         .get('/teams/invalidId')
-      // console.log(chaiHttpResponse)
+
       expect(chaiHttpResponse.status).to.be.equal(400);
       expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Id must be a number' });
     });
