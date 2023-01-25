@@ -123,6 +123,16 @@ describe('Testes de integração referentes a GET /matches/:id/finish"', async (
       expect(chaiHttpResponse.status).to.be.equal(400);
       expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Id must be a number' });
     });
+
+    it('Retorna um erro com status HTTP 400 quando a partida já estiver finalizada', async () => {
+
+      chaiHttpResponse = await chai
+        .request(app)
+        .patch('/matches/1/finish')
+
+      expect(chaiHttpResponse.status).to.be.equal(400);
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Match already finished' });
+    });
   });
 });
 
