@@ -18,4 +18,10 @@ export default class MatchValidations {
       throw new UnprocessableException('It is not possible to create a match with two equal teams');
     }
   }
+
+  public static validateGoals(homeGoals: number, awayGoals: number): void {
+    if (Number.isNaN(homeGoals) || Number.isNaN(awayGoals)) {
+      throw new BadRequestException('Goals values must be numbers');
+    }
+  }
 }

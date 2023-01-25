@@ -15,7 +15,9 @@ import {
   mockedCorrectNewMatchReq,
   mockedNewMatchWithSameTeamsReq,
   mockedNewMatchWithInvalidTeamsReq,
-  mockedNewMatchRes
+  mockedNewMatchRes,
+  mockedValidNewResultReq,
+  mockedinvalidNewResultReq
 } from './mocks/matches.mocks'
 
 const { app } = new App();
@@ -84,7 +86,74 @@ describe('Testes de integração referentes a GET /matches com filtro de "inProg
   });
 });
 
-describe('Testes de integração referentes a GET /matches/:id/finish"', async () => {
+describe('Testes de integração referentes a PATCH /matches/:id"', async () => {
+
+  afterEach(sinon.restore)
+
+  let chaiHttpResponse: Response;
+
+  describe('Em caso de sucesso', async () => {
+    it('Retorna a mensagem "New result!", com status HTTP 200', async () => {
+      sinon.stub(Match, "update").resolves([1]);
+
+      chaiHttpResponse = await chai
+        .request(app)
+        .patch('/matches/42')
+        .send(mockedValidNewResultReq);
+
+      expect(chaiHttpResponse.status).to.be.equal(200);
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Score updated' });
+    });
+  });
+
+  describe('Em caso de falha', async () => {
+    it('Retorna um erro com status HTTP 404 quando não há partida com o id passado', async () => {
+
+      chaiHttpResponse = await chai
+        .request(app)
+        .patch('/matches/9999')
+        .send(mockedValidNewResultReq);
+
+      expect(chaiHttpResponse.status).to.be.equal(404);
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Match not found' });
+    });
+
+    it('Retorna um erro com status HTTP 400 quando pelo menos um dos valores passados é inválido', async () => {
+
+      chaiHttpResponse = await chai
+        .request(app)
+        .patch('/matches/42')
+        .send(mockedinvalidNewResultReq);
+
+      expect(chaiHttpResponse.status).to.be.equal(400);
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Goals values must be numbers' });
+    });
+
+    it('Retorna um erro com status HTTP 400 quando o id é inválido', async () => {
+
+      chaiHttpResponse = await chai
+        .request(app)
+        .patch('/matches/invalidId')
+        .send(mockedValidNewResultReq);
+
+      expect(chaiHttpResponse.status).to.be.equal(400);
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Id must be a number' });
+    });
+
+    it('Retorna um erro com status HTTP 400 quando a partida já estiver finalizada', async () => {
+
+      chaiHttpResponse = await chai
+        .request(app)
+        .patch('/matches/1')
+        .send(mockedValidNewResultReq);
+
+      expect(chaiHttpResponse.status).to.be.equal(400);
+      expect(chaiHttpResponse.body).to.be.deep.equal({ message: 'Match already finished' });
+    });
+  });
+});
+
+describe('Testes de integração referentes a PATCH /matches/:id/finish"', async () => {
 
   afterEach(sinon.restore)
 

@@ -120,6 +120,16 @@ const mockedNewMatchRes: IMatch = {
   inProgress: true
 }
 
+const mockedValidNewResultReq = {
+  homeTeamGoals: 2,
+  awayTeamGoals: 2,
+}
+
+const mockedinvalidNewResultReq = {
+  homeTeamGoals: 'x',
+  awayTeamGoals: 2,
+}
+
 export {
   mockedMatches,
   mockedMatchesInProgress,
@@ -127,5 +137,7 @@ export {
   mockedCorrectNewMatchReq,
   mockedNewMatchWithSameTeamsReq,
   mockedNewMatchWithInvalidTeamsReq,
-  mockedNewMatchRes
+  mockedNewMatchRes,
+  mockedValidNewResultReq,
+  mockedinvalidNewResultReq,
 }

@@ -67,4 +67,19 @@ export default class MatchService implements IMatchService {
     const [affectedCount] = await this._model.update({ inProgress: false }, { where: { id } });
     return affectedCount;
   }
+
+  public async updateScore(id: number, homeGoals: number, awayGoals: number)
+    : Promise <number | null> {
+    MatchValidations.validateGoals(homeGoals, awayGoals);
+
+    const match = await this.getById(id);
+
+    if (!match?.inProgress) throw new BadRequestException('Match already finished');
+
+    const [affectedCount] = await this._model.update(
+      { homeTeamGoals: homeGoals, awayTeamGoals: awayGoals },
+      { where: { id } },
+    );
+    return affectedCount;
+  }
 }

@@ -44,4 +44,18 @@ export default class MatchController {
       next(error);
     }
   };
+
+  public updateScore =
+  async (req: Request, res: Response, next: NextFunction): Promise<Response | void> => {
+    try {
+      const { id } = req.params;
+      const { homeTeamGoals, awayTeamGoals } = req.body;
+
+      await this._service.updateScore(Number(id), Number(homeTeamGoals), Number(awayTeamGoals));
+
+      res.status(statusCodes.ok).json({ message: 'Score updated' });
+    } catch (error) {
+      next(error);
+    }
+  };
 }
