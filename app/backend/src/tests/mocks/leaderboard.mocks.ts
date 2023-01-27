@@ -107,65 +107,59 @@ const mockedHomeStandings: ILeaderboard[] = [
 
 const mockedAwayStandingsRaw: ILeaderboardRaw[] = [
   {
-    teamName: "Napoli - SC",
+    teamName: "Santos",
     awayMatches: [
       {
-        homeTeamId: 4,
-        homeTeamGoals: 3,
-        awayTeamId: 11,
-        awayTeamGoals: 0
-      },
-      {
-        homeTeamId: 14,
-        homeTeamGoals: 5,
-        awayTeamId: 11,
-        awayTeamGoals: 1
-      },
-      {
-        homeTeamId: 3,
-        homeTeamGoals: 2,
-        awayTeamId: 11,
-        awayTeamGoals: 0
-      }
-    ]
-  },
-  {
-    teamName: "Botafogo",
-    awayMatches: [
-      {
-        homeTeamId: 13,
+        homeTeamId: 9,
         homeTeamGoals: 1,
-        awayTeamId: 3,
-        awayTeamGoals: 0
-      },
-      {
-        homeTeamId: 4,
-        homeTeamGoals: 3,
-        awayTeamId: 3,
+        awayTeamId: 14,
         awayTeamGoals: 1
-      }
-    ]
-  },
-  {
-    teamName: "Cruzeiro",
-    awayMatches: [
-      {
-        homeTeamId: 8,
-        homeTeamGoals: 2,
-        awayTeamId: 5,
-        awayTeamGoals: 1
-      },
-      {
-        homeTeamId: 12,
-        homeTeamGoals: 4,
-        awayTeamId: 5,
-        awayTeamGoals: 2
       },
       {
         homeTeamId: 10,
-        homeTeamGoals: 1,
-        awayTeamId: 5,
+        homeTeamGoals: 2,
+        awayTeamId: 14,
+        awayTeamGoals: 2
+      }
+    ]
+  },
+  {
+    teamName: "Palmeiras",
+    awayMatches: [
+      {
+        homeTeamId: 1,
+        homeTeamGoals: 0,
+        awayTeamId: 12,
         awayTeamGoals: 3
+      },
+      {
+        homeTeamId: 3,
+        homeTeamGoals: 0,
+        awayTeamId: 12,
+        awayTeamGoals: 4
+      }
+    ]
+  },
+  {
+    teamName: "Corinthians",
+    awayMatches: [
+      {
+        homeTeamId: 6,
+        homeTeamGoals: 0,
+        awayTeamId: 4,
+        awayTeamGoals: 1
+      },
+      {
+        homeTeamId: 9,
+        homeTeamGoals: 0,
+        awayTeamId: 4,
+        awayTeamGoals: 4
+      },
+      {
+        homeTeamId: 14,
+        homeTeamGoals: 2,
+        awayTeamId: 4,
+        awayTeamGoals: 1
       }
     ]
   },
@@ -173,42 +167,86 @@ const mockedAwayStandingsRaw: ILeaderboardRaw[] = [
 
 const mockedAwayStandings: ILeaderboard[] = [
   {
-    name: "Napoli - SC",
-    totalPoints: 9,
-    totalGames: 3,
-    totalVictories: 3,
-    totalDraws: 0,
-    totalLosses: 0,
-    goalsFavor: 10,
-    goalsOwn: 1,
-    goalsBalance: 9,
-    efficiency: "100.00"
-  },
-  {
-    name: "Botafogo",
+    name: "Palmeiras",
     totalPoints: 6,
     totalGames: 2,
     totalVictories: 2,
     totalDraws: 0,
     totalLosses: 0,
-    goalsFavor: 4,
-    goalsOwn: 1,
-    goalsBalance: 3,
+    goalsFavor: 7,
+    goalsOwn: 0,
+    goalsBalance: 7,
     efficiency: "100.00"
   },
   {
-    name: "Cruzeiro",
+    name: "Corinthians",
     totalPoints: 6,
     totalGames: 3,
     totalVictories: 2,
     totalDraws: 0,
     totalLosses: 1,
-    goalsFavor: 7,
-    goalsOwn: 6,
-    goalsBalance: 1,
+    goalsFavor: 6,
+    goalsOwn: 2,
+    goalsBalance: 4,
     efficiency: "66.67"
+  },
+  {
+    name: "Santos",
+    totalPoints: 2,
+    totalGames: 2,
+    totalVictories: 0,
+    totalDraws: 2,
+    totalLosses: 0,
+    goalsFavor: 3,
+    goalsOwn: 3,
+    goalsBalance: 0,
+    efficiency: "33.33"
   },
 ]
 
+const mockedGeneralStandings: ILeaderboard[] = [
+  {
+    name: "Palmeiras",
+    totalPoints: 13,
+    totalGames: 5,
+    totalVictories: 4,
+    totalDraws: 1,
+    totalLosses: 0,
+    goalsFavor: 17,
+    goalsOwn: 5,
+    goalsBalance: 12,
+    efficiency: "86.67"
+  },
+  {
+    name: "Corinthians",
+    totalPoints: 12,
+    totalGames: 5,
+    totalVictories: 4,
+    totalDraws: 0,
+    totalLosses: 1,
+    goalsFavor: 12,
+    goalsOwn: 3,
+    goalsBalance: 9,
+    efficiency: "80.00"
+  },
+  {
+    name: "Santos",
+    totalPoints: 11,
+    totalGames: 5,
+    totalVictories: 3,
+    totalDraws: 2,
+    totalLosses: 0,
+    goalsFavor: 12,
+    goalsOwn: 6,
+    goalsBalance: 6,
+    efficiency: "73.33"
+  },
+]
 
-export { mockedHomeStandingsRaw, mockedHomeStandings, mockedAwayStandingsRaw, mockedAwayStandings };
+export {
+  mockedHomeStandingsRaw,
+  mockedHomeStandings,
+  mockedAwayStandingsRaw,
+  mockedAwayStandings,
+  mockedGeneralStandings
+};

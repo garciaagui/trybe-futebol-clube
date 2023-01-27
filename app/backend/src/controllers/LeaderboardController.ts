@@ -26,4 +26,15 @@ export default class LeaderboardController {
       next(error);
     }
   };
+
+  public getGeneralStandings =
+  async (req: Request, res: Response, next: NextFunction): Promise<Response | void> => {
+    try {
+      const standings = await this._service.getGeneralStandings();
+
+      res.status(statusCodes.ok).json(standings);
+    } catch (error) {
+      next(error);
+    }
+  };
 }

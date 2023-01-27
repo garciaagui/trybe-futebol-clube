@@ -6,6 +6,9 @@ const leaderboardController = new LeaderboardController(new LeaderboardService()
 
 const router = Router();
 
+router.get('/', (req, res, next) =>
+  leaderboardController.getGeneralStandings(req, res, next));
+
 router.get('/home', (req, res, next) =>
   leaderboardController.getHomeStandings(req, res, next));
 

@@ -10,7 +10,8 @@ import {
   mockedHomeStandingsRaw,
   mockedHomeStandings,
   mockedAwayStandingsRaw,
-  mockedAwayStandings
+  mockedAwayStandings,
+  mockedGeneralStandings
 } from './mocks/leaderboard.mocks'
 import { ILeaderboardRaw } from '../interfaces';
 import LeaderboardService from '../services/LeaderboardService';
@@ -18,6 +19,28 @@ import LeaderboardService from '../services/LeaderboardService';
 const { app } = new App();
 const { expect } = chai;
 chai.use(chaiHttp);
+
+describe('Testes de integração referentes a GET /leaderboard', async () => {
+
+  afterEach(sinon.restore)
+
+  let chaiHttpResponse: Response;
+
+  describe('Em caso de sucesso', async () => {
+    it('Retorna com status HTTP 200 a classificação considerando todos as partidas', async () => {
+      const findAllStub = sinon.stub(Team, "findAll")
+      findAllStub.onCall(0).resolves(mockedHomeStandingsRaw as ILeaderboardRaw[] | any);
+      findAllStub.onCall(1).resolves(mockedAwayStandingsRaw as ILeaderboardRaw[] | any);
+
+      chaiHttpResponse = await chai
+        .request(app)
+        .get('/leaderboard')
+
+      expect(chaiHttpResponse.status).to.be.equal(200);
+      expect(chaiHttpResponse.body).to.be.deep.equal(mockedGeneralStandings);
+    });
+  });
+});
 
 describe('Testes de integração referentes a GET /leaderboard/home', async () => {
 

@@ -107,6 +107,26 @@ export default class LeaderboardService implements ILeaderboardService {
       ));
   }
 
+  private static arrangeGeneralData(homeArr: ILeaderboard[], awayArr: ILeaderboard[]) {
+    const generalData = homeArr.map((e) => {
+      const awayStats = awayArr.find((x) => x.name === e.name) as ILeaderboard;
+
+      e.totalPoints += awayStats.totalPoints;
+      e.totalGames += awayStats.totalGames;
+      e.totalVictories += awayStats.totalVictories;
+      e.totalDraws += awayStats.totalDraws;
+      e.totalLosses += awayStats.totalLosses;
+      e.goalsFavor += awayStats.goalsFavor;
+      e.goalsOwn += awayStats.goalsOwn;
+      e.goalsBalance = e.goalsFavor - e.goalsOwn;
+      e.efficiency = ((e.totalPoints / (e.totalGames * 3)) * 100).toFixed(2);
+
+      return e;
+    });
+
+    return generalData;
+  }
+
   public async getStandingsByReference(reference: 'home' | 'away'): Promise<ILeaderboard[]> {
     const data = await this._teamModel.findAll({
       include: [
@@ -120,5 +140,21 @@ export default class LeaderboardService implements ILeaderboardService {
 
     return LeaderboardService
       .arrangeDate(data as unknown as ILeaderboardRaw[], reference);
+  }
+
+  public async getGeneralStandings(): Promise<ILeaderboard[]> {
+    const homeStadings = await this.getStandingsByReference('home');
+    const awayStandings = await this.getStandingsByReference('away');
+
+    const generalStandings = LeaderboardService.arrangeGeneralData(homeStadings, awayStandings);
+
+    return generalStandings
+      .sort(LeaderboardService.sortByMultipleCriteria(
+        LeaderboardService.sortByPoints,
+        LeaderboardService.sortByVictories,
+        LeaderboardService.sortByGoalsBalance,
+        LeaderboardService.sortByGoalsFavor,
+        LeaderboardService.sortByGoalsOwn,
+      ));
   }
 }
