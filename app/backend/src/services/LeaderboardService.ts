@@ -7,12 +7,13 @@ import { ILeaderboardService } from './interfaces/ILeaderboardService';
 export default class LeaderboardService implements ILeaderboardService {
   constructor(private _matchModel = Match, private _teamModel = Team) {}
 
-  private static generateGamesStats(array: ILeaderboardRaw[]) {
+  private static generateGamesStats(array: ILeaderboardRaw[], reference: 'home' | 'away') {
+    const opposite = reference === 'home' ? 'away' : 'home';
     const stats = array.reduce((acc: IGameStats, curr: INewMatch | any) => {
-      if (curr.homeTeamGoals > curr.awayTeamGoals) {
+      if (curr[`${reference}TeamGoals`] > curr[`${opposite}TeamGoals`]) {
         acc.totalVictories += 1;
         acc.totalPoints += 3;
-      } else if (curr.homeTeamGoals < curr.awayTeamGoals) {
+      } else if (curr[`${reference}TeamGoals`] < curr[`${opposite}TeamGoals`]) {
         acc.totalLosses += 1;
       } else {
         acc.totalDraws += 1;
@@ -29,11 +30,13 @@ export default class LeaderboardService implements ILeaderboardService {
     return stats;
   }
 
-  private static generateScoreStats(array: ILeaderboardRaw[]) {
+  private static generateScoreStats(array: ILeaderboardRaw[], reference: 'home' | 'away') {
+    const opposite = reference === 'home' ? 'away' : 'home';
+
     const stats = array.reduce((acc: IScoreStats, curr: any) => {
-      acc.goalsFavor += curr.homeTeamGoals;
-      acc.goalsOwn += curr.awayTeamGoals;
-      acc.goalsBalance += (curr.homeTeamGoals - curr.awayTeamGoals);
+      acc.goalsFavor += curr[`${reference}TeamGoals`];
+      acc.goalsOwn += curr[`${opposite}TeamGoals`];
+      acc.goalsBalance += (curr[`${reference}TeamGoals`] - curr[`${opposite}TeamGoals`]);
       return acc;
     }, { goalsFavor: 0, goalsOwn: 0, goalsBalance: 0 });
 
@@ -87,8 +90,8 @@ export default class LeaderboardService implements ILeaderboardService {
   ) {
     const matches = reference === 'home' ? 'homeMatches' : 'awayMatches';
     const newArray = array.map((e) => {
-      const gamesStats = LeaderboardService.generateGamesStats(e[matches]);
-      const scoreStats = LeaderboardService.generateScoreStats(e[matches]);
+      const gamesStats = LeaderboardService.generateGamesStats(e[matches], reference);
+      const scoreStats = LeaderboardService.generateScoreStats(e[matches], reference);
       const efficiency = ((gamesStats.totalPoints / (gamesStats.totalGames * 3)) * 100).toFixed(2);
 
       return { name: e.teamName, ...gamesStats, ...scoreStats, efficiency };

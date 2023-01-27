@@ -6,7 +6,12 @@ import chaiHttp = require('chai-http');
 import { App } from '../app';
 import Team from '../database/models/Team';
 import { Response } from 'superagent';
-import { mockedHomeStandings, mockedHomeStandingsRaw } from './mocks/leaderboard.mocks'
+import {
+  mockedHomeStandingsRaw,
+  mockedHomeStandings,
+  mockedAwayStandingsRaw,
+  mockedAwayStandings
+} from './mocks/leaderboard.mocks'
 import { ILeaderboardRaw } from '../interfaces';
 import LeaderboardService from '../services/LeaderboardService';
 
@@ -31,13 +36,25 @@ describe('Testes de integração referentes a GET /leaderboard/home', async () =
       expect(chaiHttpResponse.status).to.be.equal(200);
       expect(chaiHttpResponse.body).to.be.deep.equal(mockedHomeStandings);
     });
+  });
+});
 
-    it('xxxxxxxxxxx', async () => {
+describe('Testes de integração referentes a GET /leaderboard/away', async () => {
 
-      const myObj = new LeaderboardService();
+  afterEach(sinon.restore)
 
-      // @ts-ignore
-      const resolvedReturn = myObj.arrangeData();
+  let chaiHttpResponse: Response;
+
+  describe('Em caso de sucesso', async () => {
+    it('Retorna com status HTTP 200 a classificação considerando apenas jogos fora de casa', async () => {
+      sinon.stub(Team, "findAll").resolves(mockedAwayStandingsRaw as ILeaderboardRaw[] | any);
+
+      chaiHttpResponse = await chai
+        .request(app)
+        .get('/leaderboard/away')
+
+      expect(chaiHttpResponse.status).to.be.equal(200);
+      expect(chaiHttpResponse.body).to.be.deep.equal(mockedAwayStandings);
     });
   });
 });

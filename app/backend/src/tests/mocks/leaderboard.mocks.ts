@@ -105,4 +105,110 @@ const mockedHomeStandings: ILeaderboard[] = [
   }
 ];
 
-export { mockedHomeStandingsRaw, mockedHomeStandings };
+const mockedAwayStandingsRaw: ILeaderboardRaw[] = [
+  {
+    teamName: "Napoli - SC",
+    awayMatches: [
+      {
+        homeTeamId: 4,
+        homeTeamGoals: 3,
+        awayTeamId: 11,
+        awayTeamGoals: 0
+      },
+      {
+        homeTeamId: 14,
+        homeTeamGoals: 5,
+        awayTeamId: 11,
+        awayTeamGoals: 1
+      },
+      {
+        homeTeamId: 3,
+        homeTeamGoals: 2,
+        awayTeamId: 11,
+        awayTeamGoals: 0
+      }
+    ]
+  },
+  {
+    teamName: "Botafogo",
+    awayMatches: [
+      {
+        homeTeamId: 13,
+        homeTeamGoals: 1,
+        awayTeamId: 3,
+        awayTeamGoals: 0
+      },
+      {
+        homeTeamId: 4,
+        homeTeamGoals: 3,
+        awayTeamId: 3,
+        awayTeamGoals: 1
+      }
+    ]
+  },
+  {
+    teamName: "Cruzeiro",
+    awayMatches: [
+      {
+        homeTeamId: 8,
+        homeTeamGoals: 2,
+        awayTeamId: 5,
+        awayTeamGoals: 1
+      },
+      {
+        homeTeamId: 12,
+        homeTeamGoals: 4,
+        awayTeamId: 5,
+        awayTeamGoals: 2
+      },
+      {
+        homeTeamId: 10,
+        homeTeamGoals: 1,
+        awayTeamId: 5,
+        awayTeamGoals: 3
+      }
+    ]
+  },
+]
+
+const mockedAwayStandings: ILeaderboard[] = [
+  {
+    name: "Napoli - SC",
+    totalPoints: 9,
+    totalGames: 3,
+    totalVictories: 3,
+    totalDraws: 0,
+    totalLosses: 0,
+    goalsFavor: 10,
+    goalsOwn: 1,
+    goalsBalance: 9,
+    efficiency: "100.00"
+  },
+  {
+    name: "Botafogo",
+    totalPoints: 6,
+    totalGames: 2,
+    totalVictories: 2,
+    totalDraws: 0,
+    totalLosses: 0,
+    goalsFavor: 4,
+    goalsOwn: 1,
+    goalsBalance: 3,
+    efficiency: "100.00"
+  },
+  {
+    name: "Cruzeiro",
+    totalPoints: 6,
+    totalGames: 3,
+    totalVictories: 2,
+    totalDraws: 0,
+    totalLosses: 1,
+    goalsFavor: 7,
+    goalsOwn: 6,
+    goalsBalance: 1,
+    efficiency: "66.67"
+  },
+]
+
+
+export { mockedHomeStandingsRaw, mockedHomeStandings, mockedAwayStandingsRaw, mockedAwayStandings };
