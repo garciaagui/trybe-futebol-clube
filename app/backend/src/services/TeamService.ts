@@ -2,7 +2,7 @@ import { ITeam } from '../interfaces';
 import Team from '../database/models/Team';
 import { ITeamService } from './interfaces/ITeamService';
 import TeamValidations from './validations/TeamValidations';
-import NotFoundException from '../exceptions/NotFound';
+import { NotFoundException } from '../exceptions';
 
 export default class TeamService implements ITeamService {
   constructor(private _model = Team) {}
