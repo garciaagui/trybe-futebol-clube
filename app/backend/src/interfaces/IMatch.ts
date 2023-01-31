@@ -5,7 +5,7 @@ export interface INewMatch {
   awayTeamGoals: number,
 }
 
-export interface IMatch extends INewMatch{
+export interface IMatch extends INewMatch {
   id: number,
   inProgress: boolean,
 }

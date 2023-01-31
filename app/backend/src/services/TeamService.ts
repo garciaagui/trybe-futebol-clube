@@ -1,6 +1,6 @@
 import { ITeam } from '../interfaces';
 import Team from '../database/models/Team';
-import { ITeamService } from './interfaces/ITeamService';
+import { ITeamService } from './interfaces';
 import TeamValidations from './validations/TeamValidations';
 import { NotFoundException } from '../exceptions';
 
