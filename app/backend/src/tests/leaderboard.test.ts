@@ -4,17 +4,12 @@ import * as chai from 'chai';
 import chaiHttp = require('chai-http');
 
 import { App } from '../app';
-import Team from '../database/models/Team';
+import model from '../database/models'
 import { Response } from 'superagent';
-import {
-  mockedHomeStandingsRaw,
-  mockedHomeStandings,
-  mockedAwayStandingsRaw,
-  mockedAwayStandings,
-  mockedGeneralStandings
-} from './mocks/leaderboard.mocks'
-import { ILeaderboardRaw } from '../interfaces';
-import LeaderboardService from '../services/LeaderboardService';
+import { mockedHomeStandings, mockedAwayStandings, mockedGeneralStandings } from './mocks/leaderboard.mocks'
+import { QueryTypes } from 'sequelize';
+import { ILeaderboard } from '../interfaces';
+import { generalStandingsQuery, standingsByReferenceQueries } from '../utils/queries';
 
 const { app } = new App();
 const { expect } = chai;
@@ -28,9 +23,12 @@ describe('Testes de integração referentes a GET /leaderboard', async () => {
 
   describe('Em caso de sucesso', async () => {
     it('Retorna com status HTTP 200 a classificação considerando todos as partidas', async () => {
-      const findAllStub = sinon.stub(Team, "findAll")
-      findAllStub.onCall(0).resolves(mockedHomeStandingsRaw as ILeaderboardRaw[] | any);
-      findAllStub.onCall(1).resolves(mockedAwayStandingsRaw as ILeaderboardRaw[] | any);
+      // const findAllStub = sinon.stub(Team, "findAll")
+      // findAllStub.onCall(0).resolves(mockedHomeStandingsRaw as ILeaderboardRaw[] | any);
+      // findAllStub.onCall(1).resolves(mockedAwayStandingsRaw as ILeaderboardRaw[] | any);
+      sinon.stub(model, 'query')
+        .withArgs(generalStandingsQuery, { type: QueryTypes.SELECT }).
+        resolves(mockedGeneralStandings as ILeaderboard[] | any)
 
       chaiHttpResponse = await chai
         .request(app)
@@ -50,7 +48,11 @@ describe('Testes de integração referentes a GET /leaderboard/home', async () =
 
   describe('Em caso de sucesso', async () => {
     it('Retorna com status HTTP 200 a classificação considerando apenas jogos decididos em casa', async () => {
-      sinon.stub(Team, "findAll").resolves(mockedHomeStandingsRaw as ILeaderboardRaw[] | any);
+      sinon.stub(model, 'query')
+        .withArgs(standingsByReferenceQueries.home, { type: QueryTypes.SELECT }).
+        resolves(mockedHomeStandings as ILeaderboard[] | any)
+
+      // sinon.stub(Team, "findAll").resolves(mockedHomeStandingsRaw as ILeaderboardRaw[] | any);
 
       chaiHttpResponse = await chai
         .request(app)
@@ -70,7 +72,11 @@ describe('Testes de integração referentes a GET /leaderboard/away', async () =
 
   describe('Em caso de sucesso', async () => {
     it('Retorna com status HTTP 200 a classificação considerando apenas jogos fora de casa', async () => {
-      sinon.stub(Team, "findAll").resolves(mockedAwayStandingsRaw as ILeaderboardRaw[] | any);
+      sinon.stub(model, 'query')
+        .withArgs(standingsByReferenceQueries.away, { type: QueryTypes.SELECT }).
+        resolves(mockedAwayStandings as ILeaderboard[] | any)
+
+      // sinon.stub(Team, "findAll").resolves(mockedAwayStandingsRaw as ILeaderboardRaw[] | any);
 
       chaiHttpResponse = await chai
         .request(app)

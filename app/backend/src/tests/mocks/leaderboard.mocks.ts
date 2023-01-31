@@ -1,70 +1,5 @@
 import { ILeaderboard, ILeaderboardRaw } from "../../interfaces";
 
-const mockedHomeStandingsRaw: ILeaderboardRaw[] = [
-  {
-    teamName: 'Corinthians',
-    homeMatches: [
-      {
-        homeTeamId: 4,
-        homeTeamGoals: 3,
-        awayTeamId: 11,
-        awayTeamGoals: 0
-      },
-      {
-        homeTeamId: 4,
-        homeTeamGoals: 3,
-        awayTeamId: 3,
-        awayTeamGoals: 1
-      }
-    ]
-  },
-  {
-    teamName: 'Palmeiras',
-    homeMatches: [
-      {
-        homeTeamId: 12,
-        homeTeamGoals: 2,
-        awayTeamId: 6,
-        awayTeamGoals: 2
-      },
-      {
-        homeTeamId: 12,
-        homeTeamGoals: 4,
-        awayTeamId: 5,
-        awayTeamGoals: 2
-      },
-      {
-        homeTeamId: 12,
-        homeTeamGoals: 4,
-        awayTeamId: 8,
-        awayTeamGoals: 1
-      }
-    ]
-  },
-  {
-    teamName: 'Santos',
-    homeMatches: [
-      {
-        homeTeamId: 14,
-        homeTeamGoals: 2,
-        awayTeamId: 16,
-        awayTeamGoals: 1
-      },
-      {
-        homeTeamId: 14,
-        homeTeamGoals: 5,
-        awayTeamId: 11,
-        awayTeamGoals: 1
-      },
-      {
-        homeTeamId: 14,
-        homeTeamGoals: 2,
-        awayTeamId: 4,
-        awayTeamGoals: 1
-      }
-    ]
-  },
-]
 
 const mockedHomeStandings: ILeaderboard[] = [
   {
@@ -104,66 +39,6 @@ const mockedHomeStandings: ILeaderboard[] = [
     efficiency: "100.00"
   }
 ];
-
-const mockedAwayStandingsRaw: ILeaderboardRaw[] = [
-  {
-    teamName: "Santos",
-    awayMatches: [
-      {
-        homeTeamId: 9,
-        homeTeamGoals: 1,
-        awayTeamId: 14,
-        awayTeamGoals: 1
-      },
-      {
-        homeTeamId: 10,
-        homeTeamGoals: 2,
-        awayTeamId: 14,
-        awayTeamGoals: 2
-      }
-    ]
-  },
-  {
-    teamName: "Palmeiras",
-    awayMatches: [
-      {
-        homeTeamId: 1,
-        homeTeamGoals: 0,
-        awayTeamId: 12,
-        awayTeamGoals: 3
-      },
-      {
-        homeTeamId: 3,
-        homeTeamGoals: 0,
-        awayTeamId: 12,
-        awayTeamGoals: 4
-      }
-    ]
-  },
-  {
-    teamName: "Corinthians",
-    awayMatches: [
-      {
-        homeTeamId: 6,
-        homeTeamGoals: 0,
-        awayTeamId: 4,
-        awayTeamGoals: 1
-      },
-      {
-        homeTeamId: 9,
-        homeTeamGoals: 0,
-        awayTeamId: 4,
-        awayTeamGoals: 4
-      },
-      {
-        homeTeamId: 14,
-        homeTeamGoals: 2,
-        awayTeamId: 4,
-        awayTeamGoals: 1
-      }
-    ]
-  },
-]
 
 const mockedAwayStandings: ILeaderboard[] = [
   {
@@ -244,9 +119,7 @@ const mockedGeneralStandings: ILeaderboard[] = [
 ]
 
 export {
-  mockedHomeStandingsRaw,
   mockedHomeStandings,
-  mockedAwayStandingsRaw,
   mockedAwayStandings,
   mockedGeneralStandings
 };
