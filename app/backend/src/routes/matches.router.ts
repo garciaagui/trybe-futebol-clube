@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import MatchService from '../services/MatchService';
-import MatchController from '../controllers/MatchController';
+import MatchService from '../services/match.service';
+import MatchController from '../controllers/match.controller';
 import authMiddleware from '../middlewares/authMiddleware';
 
 const matchController = new MatchController(new MatchService());

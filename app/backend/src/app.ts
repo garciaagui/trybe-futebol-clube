@@ -1,8 +1,8 @@
 import * as express from 'express';
-import UserRouter from './routes/UserRouter';
-import TeamRouter from './routes/TeamsRouter';
-import MatchesRouter from './routes/MatchesRouter';
-import LeaderboardRouter from './routes/LeaderboardRouter';
+import UserRouter from './routes/user.router';
+import TeamRouter from './routes/teams.router';
+import MatchesRouter from './routes/matches.router';
+import LeaderboardRouter from './routes/leaderboard.router';
 import errorMiddleware from './middlewares/errorMiddleware';
 
 class App {
