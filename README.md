@@ -1,4 +1,4 @@
-# :construction: README em construção ! :construction:
+<h1 align="center">🚧 README em construção 🚧</h1><br />
 
 <a name="readme-top"></a>
 
@@ -18,9 +18,39 @@
 </details>
 
 ## Sobre o Projeto
+
 Projeto **25** do curso de Desenvolvimento Web da [Trybe][trybe-site-url].
 
-<!-- Descrição do projeto -->
+O TFC é uma aplicação fullstack e se trata de um site informativo sobre partidas e classificações de futebol. 
+
+Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelagem de dados através do Sequelize, de forma que o front-end pudesse consumir os dados da API adequadamente.
+
+> ℹ️ Todo front-end foi desenvolvido e disponibilizado pela Trybe.
+
+<details>
+  <summary><strong> Caso queira se aprofundar na estrutura do projeto, é só clicar aqui.</strong></summary><br />
+
+  O projeto é composto de 4 entidades:
+
+  1️⃣ **Banco de dados:**
+  - É um container docker MySQL já configurado no `docker-compose` através de um serviço definido como `db`.
+  - Tem o papel de fornecer dados para o serviço de back-end.
+  - Durante a execução dos testes sempre vai ser acessado pelo `sequelize` e via porta `3002` do `localhost`;
+  - Você também pode conectar a um Cliente MySQL (Workbench, Beekeeper, DBeaver e etc), colocando as credenciais configuradas no `docker-compose` no serviço `db`.
+
+  2️⃣ **Back-end:**
+  - Roda na porta `3001` do `localhost`, porta pela qual o front-end faz requisições por padrão;
+  - A aplicação é inicializada a partir do arquivo `app/backend/src/server.ts`;
+  - O `express` é executado e a aplicação ouve a porta que vem das variáveis de ambiente;
+  - Todas as dependências extras (tal como `joi`, `boom`, `express-async-errors`...) devem ser listadas em `app/backend/packages.npm`.
+
+  3️⃣ **Front-end:**
+  - Roda na porta `3000` do `localhost`;
+  - O front se comunica com serviço de back-end pela url `http://localhost:3001`.
+
+  4️⃣ **Docker:**
+  - O `docker-compose` tem a responsabilidade de unir todos os serviços conteinerizados (backend, frontend e db) e subir o projeto completo com o comando `npm run compose:up` ou `npm run compose:up:dev`;
+</details>
 
 <!-- [![Projeto TFC][project-demo]][project-url] -->
 
@@ -55,9 +85,12 @@ Projeto **25** do curso de Desenvolvimento Web da [Trybe][trybe-site-url].
 <br/>
 
 ## Funcionalidades
-<!-- <ul>
-  <li>XXX</li>
-</ul> -->
+<ul>
+  <li>Consultar a classificação do campeonato de três maneiras distintas: geral, jogos como mandante e jogos como visitante.</li>
+  <li>Consultar todos os jogos do campeonato, sendo possível visualizar o resultado dos jogos finalizados e dos que ainda estão em andamento.</li>
+  <li>Com o usuário logado, é possível editar o placar das partidas em andamento e finalizá-las. Jogos já finalizados não podem ser alterados.</li>
+  <li>Com o usuário logado, é possível adicionar uma nova partida.</li>
+</ul>
 
 <br/>
 
@@ -78,9 +111,15 @@ npm install
 <br/>
 
 ## Habilidades
-<!-- <ul>
-  <li>XXX</li>
-</ul> -->
+<ul>
+  <li>Modelagem de dados com Sequelize e Typescript.</li>
+  <li>Aplicação do conceito de arquitetura de software MSC (Model, Service e Controller).</li>
+  <li>Configuração de Dockerfiles para back-end e front-end.</li>
+  <li>Aplicação do Desenvolvimento Orientado a Testes (TDD).</li>
+  <li>Criação de testes de integração.</li>
+  <li>Aplicação dos princípios de Paradigma de Orientação a Objetos (POO).</li>
+  <li>Aplicação dos princípios de SOLID.</li>
+</ul>
 
 <br/>
 
