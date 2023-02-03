@@ -21,7 +21,7 @@
 
 Projeto **25** do curso de Desenvolvimento Web da [Trybe][trybe-site-url].
 
-O TFC é uma aplicação fullstack e que oferece informações sobre jogos e classificações de futebol.
+O TFC é uma aplicação fullstack que oferece informações sobre jogos e classificações de futebol.
 
 Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelagem de dados através do Sequelize, de forma que o front-end pudesse consumir os dados da API adequadamente. A arquitetura segue o modelo MSC e foram aplicados os princípios e conceitos de POO e SOLID.
 
@@ -86,10 +86,10 @@ Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelag
 
 ## Funcionalidades
 <ul>
-  <li>Consultar a classificação do campeonato de três maneiras distintas: geral, jogos como mandante e jogos como visitante.</li>
+  <li>Há três maneiras de visualizar a classificação: geral (que engloba todas as partidas), jogos como mandante e jogos como visitante.</li>
   <li>Consultar todos os jogos do campeonato, sendo possível visualizar o resultado dos jogos finalizados e dos que ainda estão em andamento.</li>
-  <li>Com o usuário admin logado, é possível editar o placar das partidas em andamento e finalizá-las. Jogos já finalizados não podem ser alterados.</li>
-  <li>Com o usuário admin logado, é possível adicionar uma nova partida.</li>
+  <li>Com o usuário <strong>admin</strong> logado, é possível editar os placares das partidas em andamento e finalizá-las. Jogos já finalizados não podem ser alterados.</li>
+  <li>Com o usuário <strong>admin</strong> logado, é possível adicionar uma nova partida.</li>
 </ul>
 
 <br/>
