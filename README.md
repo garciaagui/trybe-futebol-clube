@@ -11,6 +11,7 @@
     <li><a href="#tecnologias">Tecnologias</a></li>
     <li><a href="#funcionalidades">Funcionalidades</a></li>
     <li><a href="#como-executar-o-projeto">Como Executar o Projeto</a></li>
+    <li><a href="#endpoints">Endpoints</a></li>
     <li><a href="#habilidades">Habilidades</a></li>
     <li><a href="#sobre-a-trybe">Sobre a Trybe</a></li>
     <li><a href="#contato">Contato</a></li>
@@ -146,6 +147,61 @@ cd app/ && npm run compose:up:dev
   1. Vá até o diretório `app/backend/`;
   2. Renomeie o arquivo `.env.example` para `.env`;
   3. Configure os valores de acordo com o cenário do seu ambiente (credenciais de banco de dados, secrets desejadas e etc). 
+</details>
+
+<br/>
+
+## Endpoints
+
+Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto.
+
+<details>
+  <summary><strong>Login</strong></summary><br />
+  
+  ### POST /login
+  - Valida o login do usuário e retorna um token gerado com jsonwebtoken (jwt).
+
+  ### GET /login/validate
+  - Valida o login do usuário e retorna o `role` (admin ou user) do usuário.
+</details>
+
+<details>
+  <summary><strong>Teams</strong></summary><br />
+  
+  ### GET /teams
+  - Retorna todos os times registrados no banco de dados.
+
+  ### GET /teams/:id
+  - Retorna o time de acordo com o id passado no endpoint.
+</details>
+
+<details>
+  <summary><strong>Matches</strong></summary><br />
+  
+  ### GET /matches
+  - Retorna todas as partidas registradas no banco de dados.
+
+  ### POST /matches
+  - Registra uma nova partida.
+
+  ### PATCH /matches/:id
+  - Atualiza o placar da partida cujo id foi passado no endpoint.
+
+  ### PATCH /matches/:id/finish
+  - Finaliza a partida cujo id foi passado no endpoint.
+</details>
+
+<details>
+  <summary><strong>Leaderboard</strong></summary><br />
+  
+  ### GET /leaderboard
+  - Descrição: Retorna a classificação geral do campeonato (considera todas as partidas).
+
+  ### GET /leaderboard/home
+  - Descrição: Retorna a classificação baseada somente nos jogos disputados em casa.
+
+  ### GET /leaderboard/away
+  - Descrição: Retorna a classificação baseada somente nos jogos disputados como visitante.
 </details>
 
 <br/>
