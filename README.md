@@ -156,27 +156,29 @@ cd app/ && npm run compose:up:dev
 Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto.
 
 <details>
-  <summary><strong>Login</strong></summary><br />
-  
+  <summary><strong>Login</strong></summary>
+
   ### POST /login
   - Valida o login do usuário e retorna um token gerado com jsonwebtoken (jwt).
 
   ### GET /login/validate
   - Valida o login do usuário e retorna o `role` (admin ou user) do usuário.
+  ---
 </details>
 
 <details>
-  <summary><strong>Teams</strong></summary><br />
+  <summary><strong>Teams</strong></summary>
   
   ### GET /teams
   - Retorna todos os times registrados no banco de dados.
 
   ### GET /teams/:id
   - Retorna o time de acordo com o id passado no endpoint.
+  ---
 </details>
-
+  
 <details>
-  <summary><strong>Matches</strong></summary><br />
+  <summary><strong>Matches</strong></summary>
   
   ### GET /matches
   - Retorna todas as partidas registradas no banco de dados.
@@ -189,10 +191,11 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto.
 
   ### PATCH /matches/:id/finish
   - Finaliza a partida cujo id foi passado no endpoint.
+  ---
 </details>
 
 <details>
-  <summary><strong>Leaderboard</strong></summary><br />
+  <summary><strong>Leaderboard</strong></summary>
   
   ### GET /leaderboard
   - Descrição: Retorna a classificação geral do campeonato (considera todas as partidas).
@@ -202,6 +205,7 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto.
 
   ### GET /leaderboard/away
   - Descrição: Retorna a classificação baseada somente nos jogos disputados como visitante.
+  ---
 </details>
 
 <br/>
