@@ -109,7 +109,7 @@ Para rodar o projeto localmente, siga os passos abaixo.
 git clone git@github.com:garciaagui/trybe-project-25-trybe-futebol-clube.git
 ```
 
-3. Navegue até a raiz do projeto.
+3. Navegue até a raiz do projeto;
 ```
 cd trybe-project-25-trybe-futebol-clube/
 ```
@@ -137,9 +137,9 @@ cd app/ && npm run compose:up:dev
 <details>
   <summary><strong> ℹ️ Para instruções adicionais, clique aqui.</strong></summary><br />
 
-  - Para executar os testes do back-end, utilize o comando abaixo.
+  - Para executar os testes do back-end, vá até o diretório `app/backend/` e utilize o comando abaixo.
   ```
-  cd ./app/backend/ && npm run test:coverage
+  npm run test:coverage
   ```
 
   - Para inicializar a aplicação fora do container e conectar com seu banco local, siga os passos abaixo.
