@@ -53,35 +53,50 @@ Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelag
   - O `docker-compose` tem a responsabilidade de unir todos os serviços conteinerizados (backend, frontend e db) e subir o projeto completo com o comando `npm run compose:up` ou `npm run compose:up:dev`;
 </details>
 
-<!-- [![Projeto TFC][project-demo]][project-url] -->
-
 <br/>
 
 ## Tecnologias
 
-### *Gerais*
-[![Docker][docker-badge]][docker-url]
-[![ESlint][eslint-badge]][eslint-url]
+Para garantir a qualidade do código, fora utilizado o [ESlint][eslint-url]. Para a virtualizar a aplicação em containers, o [Docker][docker-url] foi o escolhido.
 
 
-### *Front-end*
-[![CSS3][css3-badge]][css3-url]
-[![HTML5][html5-badge]][html5-url]
-[![JavaScript][javascript-badge]][javascript-url]
-[![Jest][jest-badge]][jest-url]
-[![React][react-badge]][react-url]
-[![React Router][react-router-badge]][react-router-url]
+Abaixo você pode conferir integralmente as tecnologias empregadas no projeto. 
 
-### *Back-end*
-[![Chai][chai-badge]][chai-url]
-[![Express][express-badge]][express-url]
-[![JWT][jwt-badge]][jwt-url]
-[![Mocha][mocha-badge]][mocha-url]
-[![MySQL][mysql-badge]][mysql-url]
-[![Node.js][node-badge]][node-url]
-[![Sequelize][sequelize-badge]][sequelize-url]
-[![Sinon][sinon-badge]][sinon-url]
-[![Typescript][typescript-badge]][typescript-url]
+<details>
+  <summary><strong>✨ Front-end</strong></summary>
+
+- [HTML5][html5-url]
+- [CSS3][css3-url]
+- [JavaScript][javascript-url]
+- [React.js][react-url]
+- [React Router][react-router-url]
+- [Axios][axios-url]
+- [dotenv][dotenv-url]
+---
+</details>
+
+<details>
+  <summary><strong>⚙️ Back-end</strong></summary>
+
+- [Node.js][node-url]
+- [Typescript][typescript-url]
+- [MySQL][mysql-url]
+- [Express][express-url]
+- [Sequelize][sequelize-url]
+- [JWT][jwt-url]
+- [Bcryptjs][bcryptjs-url]
+- [dotenv][dotenv-url]
+---
+</details>
+
+<details>
+  <summary><strong>🧪 Testes</strong></summary>
+
+- [Chai][chai-url]
+- [Mocha][mocha-url]
+- [Sinon.js][sinon-url]
+---
+</details>
 
 <br/>
 
@@ -213,7 +228,7 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto.
 ## Habilidades
 <ul>
   <li>Modelagem de dados com Sequelize e Typescript.</li>
-  <li>Aplicação do conceito de arquitetura de software MSC (Model, Service e Controller).</li>
+  <li>Aplicação do conceito de arquitetura de software MSC (Model-Service-Controller).</li>
   <li>Configuração de Dockerfiles para back-end e front-end.</li>
   <li>Aplicação do Desenvolvimento Orientado a Testes (TDD).</li>
   <li>Criação de testes de integração.</li>
@@ -245,40 +260,27 @@ Projeto desenvolvido por Guilherme Garcia. Seguem abaixo minhas redes sociais e 
 <!-- [project-demo]: -->
 <!-- [project-url]: -->
 
+[axios-url]: https://axios-http.com/docs/intro
+[bcryptjs-url]: https://www.npmjs.com/package/bcryptjs
 [chai-url]: https://www.chaijs.com/
-[chai-badge]: https://img.shields.io/badge/chai-A30701?style=for-the-badge&logo=chai&logoColor=white
+[cors-url]: https://www.npmjs.com/package/cors
 [css3-url]: https://developer.mozilla.org/en-US/docs/Web/CSS
-[css3-badge]: https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white
 [docker-url]: https://www.docker.com/
-[docker-badge]: https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white
+[dotenv-url]: https://www.dotenv.org/
 [eslint-url]: https://eslint.org/
-[eslint-badge]: https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white
 [express-url]: https://expressjs.com/
-[express-badge]: https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white
 [html5-url]: https://developer.mozilla.org/en-US/docs/Web/HTML
-[html5-badge]: https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white
 [javascript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-[javascript-badge]: https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E
 [jest-url]: https://jestjs.io/
-[jest-badge]: https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white
 [jwt-url]: https://jwt.io/
-[jwt-badge]: https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=JSON%20web%20tokens&logoColor=white
 [mocha-url]: https://mochajs.org/
-[mocha-badge]: https://img.shields.io/badge/Mocha-8D6748?style=for-the-badge&logo=Mocha&logoColor=white
 [mysql-url]: https://www.mysql.com/
-[mysql-badge]: https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white
 [node-url]: https://nodejs.org/en/
-[node-badge]: https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white
 [react-url]: https://reactjs.org/
-[react-badge]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [react-router-url]: https://reactrouter.com/en/main
-[react-router-badge]: https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white
 [sequelize-url]: https://sequelize.org/
-[sequelize-badge]: https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white
 [sinon-url]: https://sinonjs.org/
-[sinon-badge]: https://img.shields.io/badge/sinon.js-323330?style=for-the-badge&logo=sinon
 [typescript-url]: https://www.typescriptlang.org/
-[typescript-badge]: https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white
 
 
 [gmail-badge]: https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white
