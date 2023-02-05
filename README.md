@@ -1,5 +1,3 @@
-<h1 align="center">🚧 README em construção 🚧</h1><br />
-
 <a name="readme-top"></a>
 
 <h1 align="center">Projeto Trybe Futebol Clube (TFC) ⚽</h1>
@@ -52,6 +50,10 @@ Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelag
   4️⃣ **Docker:**
   - O `docker-compose` tem a responsabilidade de unir todos os serviços conteinerizados (backend, frontend e db) e subir o projeto completo com o comando `npm run compose:up` ou `npm run compose:up:dev`;
 </details>
+
+<br/>
+
+![Projeto TFC][project-demo]
 
 <br/>
 
@@ -250,8 +252,7 @@ Projeto desenvolvido por Guilherme Garcia. Seguem abaixo minhas redes sociais e 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [trybe-site-url]: https://www.betrybe.com/
-<!-- [project-demo]: -->
-<!-- [project-url]: -->
+[project-demo]: ./project-demo.gif
 
 [axios-url]: https://axios-http.com/docs/intro
 [bcryptjs-url]: https://www.npmjs.com/package/bcryptjs
