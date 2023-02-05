@@ -5,7 +5,7 @@
 <h1 align="center">Projeto Trybe Futebol Clube (TFC) ⚽</h1>
 
 <details>
-  <summary>Sumário</summary>
+  <summary>Sumário</summary><br />
   <ol>
     <li><a href="#sobre-o-projeto">Sobre o Projeto</a></li>
     <li><a href="#tecnologias">Tecnologias</a></li>
@@ -57,13 +57,12 @@ Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelag
 
 ## Tecnologias
 
-Para garantir a qualidade do código, fora utilizado o [ESlint][eslint-url]. Para a virtualizar a aplicação em containers, o [Docker][docker-url] foi o escolhido.
-
+Para garantir a qualidade do código, fora utilizado o [ESlint][eslint-url]. Para virtualizar a aplicação em containers, o [Docker][docker-url] foi o escolhido.
 
 Abaixo você pode conferir integralmente as tecnologias empregadas no projeto. 
 
 <details>
-  <summary><strong>✨ Front-end</strong></summary>
+  <summary><strong>✨ Front-end</strong></summary><br />
 
 - [HTML5][html5-url]
 - [CSS3][css3-url]
@@ -76,7 +75,7 @@ Abaixo você pode conferir integralmente as tecnologias empregadas no projeto.
 </details>
 
 <details>
-  <summary><strong>⚙️ Back-end</strong></summary>
+  <summary><strong>⚙️ Back-end</strong></summary><br />
 
 - [Node.js][node-url]
 - [Typescript][typescript-url]
@@ -90,7 +89,7 @@ Abaixo você pode conferir integralmente as tecnologias empregadas no projeto.
 </details>
 
 <details>
-  <summary><strong>🧪 Testes</strong></summary>
+  <summary><strong>🧪 Testes</strong></summary><br />
 
 - [Chai][chai-url]
 - [Mocha][mocha-url]
@@ -112,7 +111,6 @@ Abaixo você pode conferir integralmente as tecnologias empregadas no projeto.
 
 ## Como Executar o Projeto
 Para rodar o projeto localmente, siga os passos abaixo.
-<!-- Caso deseje somente testar a aplicação, [clique aqui][project-url]. -->
 
 1. Verifique se a sua máquina possui as configurações mínimas para execução do projeto;
  - Sistema Operacional Distribuição Unix;
@@ -130,14 +128,9 @@ git clone git@github.com:garciaagui/trybe-project-25-trybe-futebol-clube.git
 cd trybe-project-25-trybe-futebol-clube/
 ```
 
-4. Na raiz do projeto, vá até a diretório de `backend` e instale as dependências. Faça o mesmo processo para `frontend`;
-  - Backend:
+4. Na raiz do projeto, instale as dependências com o comando abaixo;
   ```
-  cd app/backend/ && npm install
-  ```
-  - Frontend:
-  ```
-  cd app/frontend/ && npm install
+  npm run postinstall
   ```
 
 5. Na raiz do projeto, vá até a diretório `app` e execute o comando abaixo para subir os containers. Ao fazê-lo, três containers serão inicializados:
@@ -246,7 +239,7 @@ _"O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda
 <br/>
 
 ## Contato
-Projeto desenvolvido por Guilherme Garcia. Seguem abaixo minhas redes sociais e meios de contato.
+Projeto desenvolvido por Guilherme Garcia. Seguem abaixo minhas redes sociais e meios de contato. 🤘
 
 [![Gmail][gmail-badge]][gmail-url]
 [![Linkedin][linkedin-badge]][linkedin-url]
