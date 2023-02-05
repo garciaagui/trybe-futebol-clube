@@ -51,9 +51,7 @@ Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelag
   - O `docker-compose` tem a responsabilidade de unir todos os serviços conteinerizados (backend, frontend e db) e subir o projeto completo com o comando `npm run compose:up` ou `npm run compose:up:dev`;
 </details>
 
-<br/>
-
-![Projeto TFC][project-demo]
+https://user-images.githubusercontent.com/70448374/216853287-5550cb20-0d01-42da-85c4-c1fc1551faa7.mp4
 
 <br/>
 
@@ -252,7 +250,6 @@ Projeto desenvolvido por Guilherme Garcia. Seguem abaixo minhas redes sociais e 
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [trybe-site-url]: https://www.betrybe.com/
-[project-demo]: ./project-demo.gif
 
 [axios-url]: https://axios-http.com/docs/intro
 [bcryptjs-url]: https://www.npmjs.com/package/bcryptjs
