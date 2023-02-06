@@ -3,7 +3,7 @@ import { UnauthorizedException } from '../exceptions';
 import generateToken from '../utils/generateToken';
 import { ILogin, IUser } from '../interfaces';
 import User from '../database/models/User';
-import { IUserService } from './interfaces/IUserService';
+import { IUserService } from './interfaces';
 import UserValidations from './validations/UserValidations';
 
 export default class UserService implements IUserService {

@@ -2,7 +2,7 @@ import { BadRequestException, NotFoundException } from '../exceptions';
 import { INewMatch, IMatch } from '../interfaces';
 import Match from '../database/models/Match';
 import Team from '../database/models/Team';
-import { IMatchService } from './interfaces/IMatchService';
+import { IMatchService } from './interfaces';
 import MatchValidations from './validations/MatchValidations';
 
 export default class MatchService implements IMatchService {

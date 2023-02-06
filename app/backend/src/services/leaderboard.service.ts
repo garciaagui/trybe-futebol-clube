@@ -1,7 +1,7 @@
 import { QueryTypes } from 'sequelize';
 import Team from '../database/models/Team';
 import { ILeaderboard } from '../interfaces';
-import { ILeaderboardService } from './interfaces/ILeaderboardService';
+import { ILeaderboardService } from './interfaces';
 import { generalStandingsQuery, standingsByReferenceQueries } from '../utils/queries';
 import model from '../database/models';
 
