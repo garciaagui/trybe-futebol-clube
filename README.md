@@ -27,7 +27,7 @@ Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelag
 > ℹ️ Todo front-end foi desenvolvido e disponibilizado pela Trybe.
 
 <details>
-  <summary><strong> Caso queira se aprofundar na estrutura do projeto, é só clicar aqui.</strong></summary><br />
+  <summary><strong> 🧱 Caso queira se aprofundar na estrutura do projeto, é só clicar aqui.</strong></summary><br />
 
   O projeto é composto de 4 entidades:
 
@@ -51,7 +51,13 @@ Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelag
   - O `docker-compose` tem a responsabilidade de unir todos os serviços conteinerizados (backend, frontend e db) e subir o projeto completo com o comando `npm run compose:up` ou `npm run compose:up:dev`;
 </details>
 
-https://user-images.githubusercontent.com/70448374/216853287-5550cb20-0d01-42da-85c4-c1fc1551faa7.mp4
+<details>
+  <summary><strong> 🎞️ Aqui você pode conferir uma demonstração do projeto.</strong></summary><br />
+  
+  https://user-images.githubusercontent.com/70448374/216853287-5550cb20-0d01-42da-85c4-c1fc1551faa7.mp4
+
+</details>
+
 
 <br/>
 
