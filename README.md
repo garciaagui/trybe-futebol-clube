@@ -1,62 +1,62 @@
 <a name="readme-top"></a>
 
-<h1 align="center">Projeto Trybe Futebol Clube (TFC) ⚽</h1>
+<h1 align="center">Project Trybe Futebol Clube (TFC) ⚽</h1>
+
+> [🇧🇷 Clique aqui para acessar a versão em português.](README_pt-br.md)
+
+## Summary
+
+<ol>
+  <li><a href="#description">Description</a></li>
+  <li><a href="#technologies">Technologies</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#how-to-run">How to Run</a></li>
+  <li><a href="#endpoints">Endpoints</a></li>
+  <li><a href="#about-trybe">About Trybe</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ol>
+
+## Description
+
+**25th project** of the [Trybe][trybe-site-url] Web Development course.
+
+TFC is a full-stack application that provides information about games and soccer rankings.
+
+I was responsible for developing the dockerized back-end using data modeling through Sequelize so that the front-end could properly consume the API data. The architecture follows the MSC model and the principles and concepts of OOP and SOLID were applied.
+
+> ℹ️ Front-end was developed and provided by Trybe.
 
 <details>
-  <summary>Sumário</summary><br />
-  <ol>
-    <li><a href="#sobre-o-projeto">Sobre o Projeto</a></li>
-    <li><a href="#tecnologias">Tecnologias</a></li>
-    <li><a href="#funcionalidades">Funcionalidades</a></li>
-    <li><a href="#como-executar-o-projeto">Como Executar o Projeto</a></li>
-    <li><a href="#endpoints">Endpoints</a></li>
-    <li><a href="#habilidades">Habilidades</a></li>
-    <li><a href="#sobre-a-trybe">Sobre a Trybe</a></li>
-    <li><a href="#contato">Contato</a></li>
-  </ol>
-</details>
+  <summary><strong> 🧱 If you want to go deeper into the structure of the project, just click here.</strong></summary><br />
 
-## Sobre o Projeto
+The project consists of 4 entities:
 
-Projeto **25** do curso de Desenvolvimento Web da [Trybe][trybe-site-url].
+1️⃣ **Database:**
 
-O TFC é uma aplicação fullstack que oferece informações sobre jogos e classificações de futebol.
-
-Fui responsável pelo desenvolvimento do back-end dockerizado utilizando modelagem de dados através do Sequelize, de forma que o front-end pudesse consumir os dados da API adequadamente. A arquitetura segue o modelo MSC e foram aplicados os princípios e conceitos de POO e SOLID.
-
-> ℹ️ Todo front-end foi desenvolvido e disponibilizado pela Trybe.
-
-<details>
-  <summary><strong> 🧱 Caso queira se aprofundar na estrutura do projeto, é só clicar aqui.</strong></summary><br />
-
-O projeto é composto de 4 entidades:
-
-1️⃣ **Banco de dados:**
-
-- É um container docker MySQL já configurado no `docker-compose` através de um serviço definido como `db`.
-- Tem o papel de fornecer dados para o serviço de back-end.
-- Durante a execução dos testes sempre vai ser acessado pelo `sequelize` e via porta `3002` do `localhost`;
-- Você também pode conectar a um Cliente MySQL (Workbench, Beekeeper, DBeaver e etc), colocando as credenciais configuradas no `docker-compose` no serviço `db`.
+- It is a pre-configured MySQL docker container in the `docker-compose` file through a service defined as `db`.
+- It is responsible for providing data to the back-end service.
+- You can also connect to a MySQL client (Workbench, Beekeeper, DBeaver, etc.), using the credentials configured in the `docker-compose` file for the `db` service.
 
 2️⃣ **Back-end:**
 
-- Roda na porta `3001` do `localhost`, porta pela qual o front-end faz requisições por padrão;
-- A aplicação é inicializada a partir do arquivo `app/backend/src/server.ts`;
-- O `express` é executado e a aplicação ouve a porta que vem das variáveis de ambiente;
-- Todas as dependências extras (tal como `joi`, `boom`, `express-async-errors`...) devem ser listadas em `app/backend/packages.npm`.
+- Runs on port `3001` of `localhost`, which is the default port for the front-end to make requests;
+- The application is initialized from the `app/backend/src/server.ts` file;
+- `express` is executed and the application listens on the port from the environment variables;
+- All extra dependencies (such as `joi`, `boom`, `express-async-errors`, etc.) must be listed in `app/backend/packages.npm`.
 
 3️⃣ **Front-end:**
 
-- Roda na porta `3000` do `localhost`;
-- O front se comunica com serviço de back-end pela url `http://localhost:3001`.
+- Runs on port `3000` of `localhost`;
+- The front-end communicates with the back-end service through the URL `http://localhost:3001`.
 
 4️⃣ **Docker:**
 
-- O `docker-compose` tem a responsabilidade de unir todos os serviços conteinerizados (backend, frontend e db) e subir o projeto completo com o comando `npm run compose:up` ou `npm run compose:up:dev`;
+- The `docker-compose` file is responsible for joining all containerized services (backend, frontend, and db) and running the entire project with the command `npm run compose:up` or `npm run compose:up:dev`.
+
 </details>
 
 <details>
-  <summary><strong> 🎞️ Aqui você pode conferir uma demonstração do projeto.</strong></summary><br />
+  <summary><strong> 🎞️ Click to see a demo of the project.</strong></summary><br />
   
   https://user-images.githubusercontent.com/70448374/216853287-5550cb20-0d01-42da-85c4-c1fc1551faa7.mp4
 
@@ -64,11 +64,11 @@ O projeto é composto de 4 entidades:
 
 <br/>
 
-## Tecnologias
+## Technologies
 
-Para garantir a qualidade do código, fora utilizado o [ESlint][eslint-url]. Para virtualizar a aplicação em containers, o [Docker][docker-url] foi o escolhido.
+To ensure code quality, [ESlint][eslint-url] was used. To virtualize the application in containers, [Docker][docker-url] was chosen.
 
-Abaixo você pode conferir integralmente as tecnologias empregadas no projeto.
+Below you can see a list of all the technologies used in the project.
 
 <details>
   <summary><strong>✨ Front-end</strong></summary><br />
@@ -102,7 +102,7 @@ Abaixo você pode conferir integralmente as tecnologias empregadas no projeto.
 </details>
 
 <details>
-  <summary><strong>🧪 Testes</strong></summary><br />
+  <summary><strong>🧪 Testing</strong></summary><br />
 
 - [Chai][chai-url]
 - [Mocha][mocha-url]
@@ -114,91 +114,92 @@ Abaixo você pode conferir integralmente as tecnologias empregadas no projeto.
 
 <br/>
 
-## Funcionalidades
+## Features
 
 <ul>
-  <li>Há três maneiras de visualizar a classificação: geral (que engloba todas as partidas), jogos como mandante e jogos como visitante.</li>
-  <li>Consultar todos os jogos do campeonato, sendo possível visualizar o resultado dos jogos finalizados e dos que ainda estão em andamento.</li>
-  <li>Com o usuário <strong>admin</strong> logado, é possível editar os placares das partidas em andamento e finalizá-las. Jogos já finalizados não podem ser alterados.</li>
-  <li>Com o usuário <strong>admin</strong> logado, é possível adicionar uma nova partida.</li>
+  <li>There are three ways to view the ranking: overall (which includes all matches), home games, and away games.</li>
+  <li>It's possible to view the results of finished games and those that are still in progress.</li>
+  <li>With the logged-in <strong>admin</strong> user, it's possible to edit the scores of matches in progress and finish them. Matches that have already ended cannot be changed.</li>
+  <li>With the logged-in <strong>admin</strong> user, it's possible to add a new match.</li>
 </ul>
 
 <br/>
 
-## Como Executar o Projeto
+## How to Run
 
-Para rodar o projeto localmente, siga os passos abaixo.
+To run the project locally, follow the steps below.
 
-1. Verifique se a sua máquina possui as configurações mínimas para execução do projeto;
+1. Verify that your machine meets the minimum requirements for running the project;
 
-- Sistema Operacional Distribuição Unix;
-- Node versão igual ou superior à `16.14.0 LTS`;
+- Unix Distribution Operating System;
+- Node version equal to or greater than `16.14.0 LTS`;
 - Docker;
-- Docker-compose versão igual ou superior à `1.29.2`.
+- Docker-compose version equal to or greater than `1.29.2`.
 
-2. Clone o repositório;
-
-```
-git clone git@github.com:garciaagui/trybe-project-25-trybe-futebol-clube.git
-```
-
-3. Navegue até a raiz do projeto;
+2. Clone the repository;
 
 ```
-cd trybe-project-25-trybe-futebol-clube/
+git clone git@github.com:garciaagui/trybe-futebol-clube.git
 ```
 
-4. Na raiz do projeto, instale as dependências com o comando abaixo;
+3. Navigate to the root of the project;
+
+```
+cd trybe-futebol-clube/
+```
+
+4. At the root of the project, install the dependencies with the command below;
 
 ```
 npm run postinstall
 ```
 
-5. Na raiz do projeto, vá até a diretório `app` e execute o comando abaixo para subir os containers. Ao fazê-lo, três containers serão inicializados:
+5. At the root of the project, go to the app directory and run the command below to start the containers. By doing so, three containers will be initialized:
 
-- **app_backend**: referente ao back-end;
-- **app_frontend**: referente ao front-end;
-- **db**: referente ao banco de dados.
+- **app_backend**: related to the back-end;
+- **app_frontend**: related to the front-end;
+- **db**: related to the database.
 
 ```
 cd app/ && npm run compose:up:dev
 ```
 
-6. No navegador, visite `http://localhost:3000`. Se tudo ocorreu bem, será possível utilizar a aplicação.
+6. In your browser, visit `http://localhost:3000`. If everything went well, you should be able to use the application.
 
 <details>
-  <summary><strong> ℹ️ Para instruções adicionais, clique aqui.</strong></summary><br />
+  <summary><strong> ℹ️ For additional instructions, click here.</strong></summary><br />
 
-- Para executar os testes do back-end, vá até o diretório `app/backend/` e utilize o comando abaixo.
+- To run the back-end tests, go to the `app/backend/` directory and use the command below.
 
 ```
 npm run test:coverage
 ```
 
-- Para inicializar a aplicação fora do container e conectar com seu banco local, siga os passos abaixo.
+- To start the application outside the container and connect to your local database, follow the steps below.
 
-1. Vá até o diretório `app/backend/`;
-2. Renomeie o arquivo `.env.example` para `.env`;
-3. Configure os valores de acordo com o cenário do seu ambiente (credenciais de banco de dados, secrets desejadas e etc).
+1. Go to the `app/backend/` directory;
+2. Rename the `.env.example` file to `.env`;
+3. Configure the values according to the scenario of your environment (database credentials, desired secrets, etc.).
+
 </details>
 
 <br/>
 
 ## Endpoints
 
-Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto. Para realizar as requisições HTTP e consultar o comportamento de cada endpoint, você pode utilizar a extensão [Thunder Client](https://www.thunderclient.com/).
+Below you can find a breakdown of the endpoints used in the project. To make HTTP requests and check the behavior of each endpoint, you can use the [Thunder Client](https://www.thunderclient.com/) extension.
 
-> ⚠️ Atente-se ao token gerado durante o login, ele será necessário para outras operações. Lembre-se também que seu tempo de expiração é de 1h.
+> ⚠️ Please pay attention to the token generated during login, it will be necessary for other operations. Also remember that its **expiration time is 1 hour**.
 
 <details>
   <summary><strong>Login</strong></summary>
 
 ### POST /login
 
-- Valida o login do usuário e retorna um token gerado com jsonwebtoken (jwt).
-- O token gerado deve ser inserido no Header `Authorization` para autenticar outras operações. Lembre-se de guardá-lo e tenha em mente que seu tempo de expiração é de 1h.
+- Validates the user's login and returns a token generated with jsonwebtoken (JWT).
+- The generated token must be inserted in the `Authorization` Header to authenticate other operations. Remember to save it and keep in mind that its **expiration time is 1 hour**.
 - URL: `http://localhost:3001/login`
-- O corpo da requisição deve conter o seguinte formato:
+- The request body must have the following format:
 
 ```
 {
@@ -209,8 +210,8 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto. 
 
 ### GET /login/validate
 
-- Valida o login do usuário e retorna o `role` (admin ou user) do usuário.
-- 🔑 O token é validado neste endpoint.
+- Validates the user's login and returns the user's `role` (admin or user).
+- 🔑 The token is validated on this endpoint.
 - URL: `http://localhost:3001/login/validate`
 
 ---
@@ -221,13 +222,13 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto. 
   <summary><strong>Teams</strong></summary>
   
 ### GET /teams
-- Retorna todos os times registrados no banco de dados.
+- Returns all teams registered in the database.
 - URL: `http://localhost:3001/teams`
 
 ### GET /teams/:id
 
-- Retorna o time de acordo com o id passado no endpoint.
-- Exemplo de URL: `http://localhost:3001/teams/1`
+- Returns the team according to the id passed in the endpoint.
+- Example URL: `http://localhost:3001/teams/1`
 
 ---
 
@@ -237,20 +238,20 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto. 
   <summary><strong>Matches</strong></summary>
   
 ### GET /matches
-- Retorna todas as partidas registradas no banco de dados.
+- Returns all matches registered in the database.
 - URL: `http://localhost:3001/matches`
 
 ### POST /matches
 
-- Registra uma nova partida.
-- 🔑 O token é validado neste endpoint.
+- Registers a new match.
+- 🔑 The token is validated in this endpoint.
 - URL: `http://localhost:3001/matches`
-- O corpo da requisição deve conter o seguinte formato:
+- The request body must have the following format:
 
 ```
 {
-  "homeTeamId": number, // O valor deve ser o id do time
-  "awayTeamId": number, // O valor deve ser o id do time
+  "homeTeamId": number, // The value must be the id of the home team
+  "awayTeamId": number, // The value must be the id of the away team
   "homeTeamGoals": number,
   "awayTeamGoals": number,
 }
@@ -258,9 +259,9 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto. 
 
 ### PATCH /matches/:id
 
-- Atualiza o placar da partida cujo id foi passado no endpoint.
-- Exemplo de URL: `http://localhost:3001/matches/42`
-- O corpo da requisição deve conter o seguinte formato:
+- Updates the score of the match whose id was passed in the endpoint.
+- Example URL: `http://localhost:3001/matches/42`
+- The request body must have the following format:
 
 ```
 {
@@ -271,9 +272,9 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto. 
 
 ### PATCH /matches/:id/finish
 
-- Finaliza a partida cujo id foi passado no endpoint.
-- Exemplo de URL: `http://localhost:3001/matches/42/finish`
-- Nada precisa ser inserido no corpo da requisição.
+- Finishes the match whose id was passed in the endpoint.
+- Example URL: `http://localhost:3001/matches/42/finish`
+- No request body is needed.
 
 ---
 
@@ -283,17 +284,17 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto. 
   <summary><strong>Leaderboard</strong></summary>
   
 ### GET /leaderboard
-- Descrição: Retorna a classificação geral do campeonato (considera todas as partidas).
+- Returns the overall classification of the championship (considers all matches).
 - URL: `http://localhost:3001/leaderboard`
 
 ### GET /leaderboard/home
 
-- Descrição: Retorna a classificação baseada somente nos jogos disputados em casa.
+- Returns the classification based only on matches played at home.
 - URL: `http://localhost:3001/leaderboard/home`
 
 ### GET /leaderboard/away
 
-- Descrição: Retorna a classificação baseada somente nos jogos disputados como visitante.
+- Returns the classification based only on matches played away.
 - URL: `http://localhost:3001/leaderboard/away`
 
 ---
@@ -302,31 +303,17 @@ Abaixo você pode conferir um detalhamento dos endpoints utilizados no projeto. 
 
 <br/>
 
-## Habilidades
+## About Trybe
 
-<ul>
-  <li>Modelagem de dados com Sequelize e Typescript.</li>
-  <li>Aplicação do conceito de arquitetura de software MSC (Model-Service-Controller).</li>
-  <li>Configuração de Dockerfiles para back-end e front-end.</li>
-  <li>Aplicação do Desenvolvimento Orientado a Testes (TDD).</li>
-  <li>Criação de testes de integração.</li>
-  <li>Aplicação dos princípios de Paradigma de Orientação a Objetos (POO).</li>
-  <li>Aplicação dos princípios de SOLID.</li>
-</ul>
+_"[Trybe][trybe-site-url] is a future school for anyone who wants to improve their lives and build a successful career in technology, where the person only pays when they get a good job."_
+
+_"The program features over 1,500 hours of online classes covering introduction to software development, front-end, back-end, computer science, software engineering, agile methodologies, and behavioral skills."_
 
 <br/>
 
-## Sobre a Trybe
+## Contact
 
-_"A [Trybe][trybe-site-url] é uma escola do futuro para qualquer pessoa que queira melhorar de vida e construir uma carreira de sucesso em tecnologia, onde a pessoa só paga quando conseguir um bom trabalho."_
-
-_"O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda introdução ao desenvolvimento de software, front-end, back-end, ciência da computação, engenharia de software, metodologias ágeis e habilidades comportamentais._"
-
-<br/>
-
-## Contato
-
-Projeto desenvolvido por Guilherme Garcia. Seguem abaixo minhas redes sociais e meios de contato. 🤘
+Project developed by **Guilherme Garcia**. Below are my social networks and means of contact. 🤘
 
 [![Gmail][gmail-badge]][gmail-url]
 [![Linkedin][linkedin-badge]][linkedin-url]
