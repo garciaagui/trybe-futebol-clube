@@ -33,8 +33,8 @@ The project consists of 4 entities:
 
 1️⃣ **Database:**
 
-- It is a pre-configured MySQL docker container in the `docker-compose` file through a service defined as `db`.
-- It is responsible for providing data to the back-end service.
+- It is a pre-configured MySQL docker container in the `docker-compose` file through a service defined as `db`;
+- It is responsible for providing data to the back-end service;
 - You can also connect to a MySQL client (Workbench, Beekeeper, DBeaver, etc.), using the credentials configured in the `docker-compose` file for the `db` service.
 
 2️⃣ **Back-end:**
@@ -320,7 +320,7 @@ Project developed by **Guilherme Garcia**. Below are my social networks and mean
 [![GitHub][github-badge]][github-url]
 [![Instagram][instagram-badge]][instagram-url]
 
-<p align="right"><a href="#readme-top">Voltar ao topo</a></p>
+<p align="right"><a href="#readme-top">Back to top</a></p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
